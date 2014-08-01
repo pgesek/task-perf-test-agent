@@ -12,8 +12,8 @@ public class TestActionProxyServiceImpl implements TestActionProxyService {
 
     @Override
     public void execute(String str, Integer integer) {
-        if (LOG.isDebugEnabled()) {
-            LOG.debug("EXECUTION: " + str + " " + integer);
+        if (LOG.isInfoEnabled()) {
+            LOG.info("EXECUTION: " + str + " " + integer);
         }
     }
 }

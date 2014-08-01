@@ -1,5 +1,6 @@
 package org.motechproject.testagent.test;
 
+import org.apache.commons.lang.time.StopWatch;
 import org.motechproject.event.MotechEvent;
 import org.motechproject.tasks.ex.TriggerNotFoundException;
 import org.motechproject.tasks.service.TriggerHandler;
@@ -20,8 +21,11 @@ public class Tester {
     private TriggerHandler tth;
 
     public void startTest(int runs) {
+        StopWatch stopWatch = new StopWatch();
+
         LOG.info("Starting test");
 
+        stopWatch.start();
         for (int i = 0; i < runs; i++) {
             String testId = "Our ID :" + i;
 
@@ -35,6 +39,11 @@ public class Tester {
             } catch (TriggerNotFoundException e) {
                 LOG.error("Error during test", e);
             }
+
+            LOG.info("Completed run {}", i);
         }
+        stopWatch.stop();
+
+        LOG.info("Runs - {}, Test Time - {}", new Object[] {runs, stopWatch.getTime()});
     }
 }

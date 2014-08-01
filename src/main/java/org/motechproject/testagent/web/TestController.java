@@ -17,7 +17,12 @@ public class TestController {
 
     @RequestMapping(value = "/start/{runs}", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
-    public void startTest(@PathVariable int runs) {
-        tester.startTest(runs);
+    public void startTest(@PathVariable final int runs) {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                tester.startTest(runs);
+            }
+        }).start();
     }
 }
