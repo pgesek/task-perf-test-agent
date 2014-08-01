@@ -1,0 +1,34 @@
+{
+  "displayName" : "testagent",
+  "moduleName" : "testagent",
+  "moduleVersion" : "0.25",
+  "triggerTaskEvents" : [
+    {
+      "displayName" : "test-trigger",
+      "subject" : "test-trigger",
+      "eventParameters" : [
+        {
+          "eventKey" : "testId",
+          "displayName" : "testId"
+        }
+      ]
+    }
+  ],
+  "actionTaskEvents" : [
+     {
+       "displayName" : "test-action",
+       "serviceInterface": "org.motechproject.testagent.service.TestActionProxyService",
+       "serviceMethod": "execute",
+       "actionParameters" : [
+         {
+           "key" : "str",
+           "displayName" : "str"
+         },
+         {
+           "key" : "integer",
+           "displayName" : "integer"
+         }
+       ]
+     }
+  ]
+}
