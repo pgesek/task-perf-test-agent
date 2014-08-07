@@ -40,7 +40,7 @@ public class Tester {
                 LOG.error("Error during test", e);
             }
 
-            LOG.info("Completed run {}", i);
+            LOG.debug("Completed run {}", i);
         }
         stopWatch.stop();
 
