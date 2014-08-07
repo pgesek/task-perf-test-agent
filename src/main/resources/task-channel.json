@@ -26,7 +26,8 @@
          },
          {
            "key" : "integer",
-           "displayName" : "integer"
+           "displayName" : "integer",
+           "type" : "INTEGER"
          }
        ]
      }
